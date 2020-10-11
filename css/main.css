@@ -1,0 +1,564 @@
+* {
+  margin:  0;
+  padding: 0;
+}
+
+:root {
+  --bg-colour: #d9b3ff;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-colour);
+}
+
+body {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+body.login header h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 45px;
+  text-align: center;
+  margin: 5px;
+}
+
+body.login main,
+body.changeDet main,
+body.add-EditGame main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body.login main h3 {
+  padding-top: 10px;
+  text-align: center;
+}
+
+body main .form {
+  width: 90%;
+  height: 70%;
+  border: 4px solid black;
+  border-radius: 10px;
+  background-color: rgba(50, 50, 50, 0.3);
+  -webkit-box-shadow: 0px 0px 21px 10px rgba(0,0,0,0.53);
+  -moz-box-shadow: 0px 0px 21px 10px rgba(0,0,0,0.53);
+  box-shadow: 0px 0px 21px 10px rgba(0,0,0,0.53);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body main .form h2 {
+  text-align: center;
+}
+
+body main .form .inp {
+  font-weight: bold;
+  width: 90%;
+}
+
+body main .form .inp .textInp,
+body.tableView main .editContainer .textInp {
+  width: 100%;
+  height: 20px;
+  border: none;
+  background: none;
+  border-bottom: 3px solid #66b3ff;
+  transition: all 0.5s;
+}
+body main .form .inp .textInp:hover,
+body.tableView main .editContainer .textInp:hover  {
+  background: rgba(50, 50, 50, 0.1);
+}
+body main .form .inp .textInp:focus,
+body.tableView main .editContainer .textInp:focus  {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+body main .form input[type="submit"] {
+  width: 80px;
+  height: 50px;
+  border: 5px solid #00e600;
+  border-radius: 10px;
+  background: #80ff80;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+body.add-EditGame main .form input[type="submit"] {
+  width: 160px;
+}
+body main .form input[type="submit"]:hover {
+  background: #00e600;
+}
+
+body main .form input[type="submit"]:disabled {
+  background: #ff6699;
+  border: 5px solid #b3003b;
+}
+body main .form input[type="submit"]:disabled:hover {
+  background: #b3003b;
+}
+
+body main,
+body a {
+  font-family: 'Epilogue', sans-serif;
+}
+
+body header.mainNav nav ul {
+  list-style-type: none;
+}
+
+body header.mainNav nav ul li:first-child {
+  display: none;
+}
+
+body header.mainNav nav ul li {
+  width: 100%;
+  border: 2px solid black;
+  background: #80aaff;
+  text-align: center;
+}
+
+body header.mainNav nav ul li.visiting {
+  background: #004de6;
+}
+
+body header.mainNav nav ul li:hover {
+  background: #004de6;
+}
+
+body header.mainNav nav ul li.visiting a,
+body header.mainNav nav ul li.visiting a:visited {
+  color: white;
+}
+
+body header.mainNav nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+body header.mainNav nav ul li a:visited {
+  color: black;
+}
+
+body header.mainNav nav ul li a div {
+  padding: 8px 0;
+}
+
+body.tableView main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+body.tableView main .editContainer h1 {
+  padding-bottom: 10px;
+}
+
+body.tableView main .editContainer > div {
+  margin: 8px 5px;
+}
+
+body.tableView main .editContainer > div > input[type="radio"] {
+  margin-left: 10px;
+}
+body.tableView main .editContainer > div > input[type="radio"]:last-child {
+  margin-left: 5px;
+}
+
+body.tableView main .editContainer div input[type="submit"] {
+  float: left;
+  height: 50px;
+  width: 45%;
+  border: 3px solid #00e600;
+  background: #80ff80;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+body.tableView main .editContainer div input[type="submit"]:last-child {
+  float: right;
+}
+body.tableView main .editContainer .userButtons input[type="submit"],
+body.tableView main .editContainer .userButtons input[type="submit"]:last-child {
+  float: none;
+}
+body.tableView main .editContainer div input[type="submit"]:hover {
+  background: #00e600;
+}
+
+body.tableView main .editContainer .userButtons > div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3px;
+}
+body.tableView main .editContainer .userButtons div input {
+  margin-right: 10px;
+}
+
+body.tableView main .editContainer div input[type="submit"]:disabled {
+  background: #ff6699;
+  border: 3px solid #b3003b;
+}
+body.tableView main .editContainer div input[type="submit"]:disabled:hover {
+  background: #b3003b;
+}
+
+body.tableView main .tableContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+body.tableView .tableContainer div {
+  margin: 10px 0;
+  height: 250px;
+  width: 90%;
+  overflow-y: scroll;
+  
+}
+
+body.tableView main .tableContainer table, tr, td, th {
+  border: 1px solid black;
+  padding: 3px;
+  font-size: 18px;
+  text-align: center;
+}
+body.tableView main .tableContainer table tr:nth-child(even) {
+  background-color: rgb(138, 138, 255);
+}
+body.tableView main .tableContainer table tr:nth-child(odd) {
+  background-color: rgb(168, 168, 255);
+}
+body.tableView main .tableContainer table tr:nth-child(even):hover {
+  background-color: rgb(118, 118, 235);
+}
+body.tableView main .tableContainer table tr:nth-child(odd):hover {
+  background-color: rgb(148, 148, 235);
+}
+body.tableView main .tableContainer table {
+  position: relative;
+  border-collapse: collapse;
+  width: 100%;
+}
+body.tableView main .tableContainer table th {
+  font-size: 22px
+}
+
+body.accSett main {
+  margin: 20px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.accSett main div h2 {
+  margin-bottom: 10px;
+}
+
+body.accSett main div a {
+  --padding-tb: 3px;
+  --border: 5px;
+  --font-size: 16px;
+  text-decoration: none;
+  color: black;
+  padding: var(--padding-tb);
+  font-size: var(--font-size);
+  line-height: calc(
+    var(--font-size) +
+    calc( var(--border) * 2 ) +
+    calc( var(--padding-tb) * 2 )
+  );
+  font-weight: bold;
+  border: var(--border) solid #0073e6;
+  border-radius: 5px;
+  background: #66b3ff;
+}
+body.accSett main div a:hover {
+  background: #0073e6;
+}
+
+body.changeDet main .form .btns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+body.changeDet main .form .btns input[type="submit"] {
+  width: 80px;
+  height: 50px;
+  font-size: 16px;
+}
+body.changeDet main .form .btns a div {
+  border: 5px solid #0073e6;
+  border-radius: 10px;
+  background: #66b3ff;
+  height: 40px;
+  transition: all 0.3s;
+}
+body.changeDet main .form .btns a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  width: 80px;
+  margin-left: 30px;
+}
+body.changeDet main .form .btns a div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.changeDet main .form .btns a div:hover {
+  background: #0073e6;
+}
+
+@media only screen and (min-width: 768px) {
+
+  body.login header h1 {
+    font-size: 55px;
+    margin: 15px;
+  }
+
+  body main .form h2 {
+    font-size: 40px;
+  }
+
+  body.login main h3 {
+    font-size: 25px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  body main .form .inp {
+    font-size: 20px;
+  }
+
+  body main .form .inp .textInp,
+  body.tableView main .editContainer div .textInp {
+    height: 40px;
+    font-size: 35px;
+    padding-left: 5px;
+    margin-top: 5px;
+  }
+
+  body main .form input[type="submit"] {
+    width: 150px;
+    height: 70px;
+    font-size: 25px;
+  }
+  body.add-EditGame main .form input[type="submit"] {
+    font-size: 20px;
+    width: 180px;
+  }
+
+  body header.mainNav nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  body header.mainNav nav ul li {
+    width: 25%;
+    height: 60px;
+  }
+
+  body header.mainNav nav ul li a {
+    font-size: 24px;
+  }
+
+  body header.mainNav nav ul li div {
+    height: 100%;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 100%;
+  }
+
+  body.tableView main .editContainer {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  body.tableView main .editContainer div label {
+    font-size: 18px;
+  }
+
+  body.tableView main .editContainer div span {
+    font-size: 18px;
+  }
+
+  body.tableView main .editContainer div input[type="submit"] {
+    font-size: 22px;
+  }
+
+  body.tableView main .editContainer .userButtons input[type="submit"] {
+    height: 65px;
+    width: 225px;
+  }
+  body.tableView main .editContainer .userButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  body.tableView main .tableContainer div {
+    height: 600px;
+  }
+
+  body.tableView main .tableContainer table, tr, td {
+    font-size: 22px;
+  }
+  body.tableView main .tableContainer table tr:first-child {
+    font-size: 28px
+  }
+
+  body.accSett main {
+    justify-content: space-around;
+  }
+  body.accSett main div h2 {
+    margin-bottom: 10px;
+  }
+  body.accSett main div a {
+    --padding-tb: 6px;
+    --font-size: 20px;
+    padding: var(--padding-tb) 3px;
+  }
+
+  body.changeDet main .form .btns input[type="submit"] {
+    width: 110px;
+    height: 65px;
+    font-size: 22px;
+  }
+  body.changeDet main .form .btns a div {
+    height: 55px;
+  }
+  body.changeDet main .form .btns a {
+    font-size: 22px;
+    width: 110px;
+    margin-left: 30px;
+  }
+
+}
+
+@media only screen and (min-width: 1390px) {
+
+  body.login header h1 {
+    float: left;
+    margin: 15px 25px;
+  }
+
+  body main .form {
+    width: 60%;
+  }
+
+  body main .form h2 {
+    font-size: 45px;
+  }
+
+  body.login main h3 {
+    font-size: 25px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  body main .form input[type="submit"] {
+    width: 190px;
+    font-size: 25px;
+  }
+  body.add-EditGame main .form input[type="submit"] {
+    width: 230px;
+  }
+
+  body header.mainNav {
+    background: #80aaff;
+    border: 2px solid black;
+  }
+  body header.mainNav nav ul {
+    display: block;
+  }
+  body header.mainNav nav ul li {
+    width: 15%;
+    border: none;
+    border-right: 2px solid black;
+    height: 75px;
+    float: left;
+  }
+
+  body header.mainNav nav ul li:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Righteous', cursive;
+    border-left: none;
+    font-size: 22px;
+  }
+  body header.mainNav nav ul li:first-child:hover {
+    background: #80aaff;
+  }
+  body header.mainNav nav ul li h1 {
+    color: #004de6;
+  }
+
+  body header.mainNav nav li:last-child {
+    float: right;
+    border-left: 2px solid black;
+  }
+
+  body.tableView main .editContainer div h1 {
+    font-size: 30px;
+  }
+
+  body.tableView main .editContainer div label {
+    font-size: 22px;
+  }
+
+  body.tableView main .editContainer div span {
+    font-size: 22px;
+  }
+
+  body.tableView main .editContainer div input[type="submit"] {
+    width: 25%;
+  }
+  body.tableView main .editContainer div input[type="submit"]:last-child {
+    float: left;
+    margin-left: 10px;
+  }
+
+  body.tableView main .editContainer .userButtons input[type="submit"] {
+    height: 80px;
+    width: 250px;
+  }
+  body.tableView main .editContainer .userButtons {
+    justify-content: space-around;
+  }
+
+  body.accSett main div h2 {
+    font-size: 30px;
+  }
+
+  body.accSett main div a {
+    --padding-tb: 8px;
+    --font-size: 24px;
+  }
+
+}
+
+@media only screen and (min-width: 1920px) {
+
+  body main .form {
+    width: 45%;
+  }
+
+}

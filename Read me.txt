@@ -1,0 +1,21 @@
+-- SQL Connection setup --
+Go to "util/connection.php", edit the variables to connect to your database.
+
+-- Table creation queries --
+Create user table (You need to insert a user of type user/admin to be able to login)
+
+CREATE TABLE Users (
+    id INTEGER PRIMARY KEY auto_increment ,
+    username VARCHAR (30) ,
+    password VARCHAR (100),
+    type ENUM('pending', 'user', 'admin'),
+    UNIQUE (username)
+ );
+ 
+ Create stock table (you should add some test data)
+ 
+ CREATE TABLE Stock (
+    id INTEGER PRIMARY KEY auto_increment ,
+    gameName VARCHAR (30) ,
+    quantity INTEGER
+ );
